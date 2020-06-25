@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: blackbook-deployment
+  labels:
+    app: blackbook
+spec:
+  selector:
+    matchLabels:
+      app: blackbook
+  template:
+    metadata:
+      labels:
+        app: blackbook
+    spec:
+      containers:
+      - name: blackbook
+        image: docker.io/rlkamradt/blackbook:latest
+        ports:
+        - containerPort: 80
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: blackbook-service
+spec:
+  type: ClusterIP
+  selector:
+    app: blackbook
+  ports:
+  - port: 8080
+    targetPort: 80
+
