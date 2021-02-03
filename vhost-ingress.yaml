@@ -13,7 +13,16 @@ spec:
           serviceName: blackbook-service
           servicePort: 8080
         path: /
+  - host: blackbookreadprofile.kamradtfamily.net
+    http:
+      paths:
+      - backend:
+          serviceName: blackbookreadprofile-service
+          servicePort: 3000
+        path: /
   tls:
   - hosts:
     - blackbook.kamradtfamily.net
+    secretName: kamradtfamily
+    - blackbookreadprofile.kamradtfamily.net
     secretName: kamradtfamily
