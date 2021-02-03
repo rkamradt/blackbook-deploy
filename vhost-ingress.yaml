@@ -23,6 +23,6 @@ spec:
   tls:
   - hosts:
     - blackbook.kamradtfamily.net
-    secretName: kamradtfamily
+      secretName: kamradtfamily
     - blackbookreadprofile.kamradtfamily.net
-    secretName: kamradtfamily
+      secretName: kamradtfamily
