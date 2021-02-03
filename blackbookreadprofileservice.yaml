@@ -1,20 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: blackbookprofileread-deployment
+  name: blackbookreadprofile-deployment
   labels:
-    app: blackbookprofileread
+    app: blackbookreadprofile
 spec:
   selector:
     matchLabels:
-      app: blackbookprofileread
+      app: blackbookreadprofile
   template:
     metadata:
       labels:
-        app: blackbookprofileread
+        app: blackbookreadprofile
     spec:
       containers:
-      - name: blackbookprofileread
+      - name: blackbookreadprofile
         image: docker.io/rlkamradt/blackbook-read-profile:latest
         ports:
         - containerPort: 3000
@@ -22,11 +22,11 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: blackbookprofileread-service
+  name: blackbookreadprofile-service
 spec:
   type: ClusterIP
   selector:
-    app: blackbookprofileread
+    app: blackbookreadprofile
   ports:
   - port: 8080
     targetPort: 3000
