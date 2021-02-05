@@ -18,13 +18,6 @@ spec:
         image: docker.io/rlkamradt/blackbook:latest
         ports:
         - containerPort: 80
-        env:
-        - name: REACT_APP_OKTA_ORG_URL
-          value: https://dev-804011.okta.com
-        - name: REACT_APP_OKTA_CLIENT_ID
-          value: 0oag1oxllhj9N2SPV4x6
-        - name: REACT_APP_READ_PROFILE_URL
-          value: https://blackbookreadprofile.kamradtfamily.net/users
 ---
 apiVersion: v1
 kind: Service
